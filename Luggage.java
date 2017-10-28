@@ -64,7 +64,7 @@ public class Luggage {
                 cells[h][w] = itemID;
     }
 
-    public void simplePlacement(ArrayList<Item> items) {
+    public boolean simplePlacement(ArrayList<Item> items) {
         int i = 0;
         while(i < items.size()) {
             int itemsIn = i;
@@ -88,6 +88,7 @@ public class Luggage {
             }
             if(itemsIn == i) break;
         }
+        return i == items.size() ? true : false;
     }
 
     public ArrayList<Item> putOne(ArrayList<Item> items) {
@@ -161,7 +162,7 @@ public class Luggage {
             }
         }
 
-        return null;
+        return itemsUsed;
     }
 
     public int getH() {

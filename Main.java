@@ -17,7 +17,7 @@ public class Main {
         Scanner sc = null;
         try {
             sc = new Scanner(System.in);
-            //sc = new Scanner(new FileReader("res/example"));
+            //sc = new Scanner(new FileReader("res/example3"));
 
             // read luggage size
             if(sc.hasNextLine()) {

@@ -16,16 +16,25 @@ public class Organizer {
 
     public void organize() {
         Collections.sort(items, new ItemComparator());
-        //ArrayList<Item> itemsUsed = L.putOne(items);
+        for (Item i: items) {
+            if(i.getW() < i.getH())
+                i.rotate();
+        }
 
-        //items.removeAll(itemsUsed);
+        boolean worked = L.simplePlacement(items);
+
+        if(!worked) {
+            L.clearLuggage();
+            Collections.sort(items, new ItemComparator2());
+            L.simplePlacement(items);
+        }
 
         /*for (Item i: items) {
             System.out.print(i.getID() + " ");
         }
         System.out.println();*/
 
-        L.simplePlacement(items);
+        //L.simplePlacement(items);
 
         L.printLuggage();
     }
